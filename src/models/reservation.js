@@ -26,28 +26,34 @@ const ReservationSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+
     carId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Car",
       required: true,
     },
+
     startDate: {
       type: Date,
       required: true,
     },
-    endDate: {
+
+    andDate: {
       type: Date,
       required: true,
     },
+
     amount: {
       type: Number,
       required: true,
     },
+
     createdId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
+
     updatedId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
@@ -57,6 +63,5 @@ const ReservationSchema = new mongoose.Schema(
   { collection: "reservations", timestamps: true }
 );
 
-const Reservation = mongoose.model("Reservation", ReservationSchema);
-
-module.exports = Reservation;
+// Export
+module.exports = mongoose.model("Reservation", ReservationSchema);

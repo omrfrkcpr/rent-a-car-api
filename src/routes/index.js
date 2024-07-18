@@ -10,14 +10,18 @@ const router = require("express").Router();
 
 // auth:
 router.use("/auth", require("./auth"));
-// users:
+// user:
 router.use("/users", require("./user"));
-// users:
+// token:
+router.use("/tokens", require("./token"));
+
+// car:
 router.use("/cars", require("./car"));
-// reservations:
+// reservation:
 router.use("/reservations", require("./reservation"));
+
 // document:
-router.use("/documents", require("./documents"));
+router.use("/documents", require("./document"));
 
 /* ------------------------------------------------------- */
 module.exports = router;

@@ -6,10 +6,19 @@ const router = require("express").Router();
 /* ------------------------------------------------------- */
 // routes/car:
 
+const car = require("../controllers/car");
+
+const permissions = require("../middlewares/permissions");
+
 // URL: /cars
 
-const car = require("../controllers.car");
+router.route("/").get(car.list).post(permissions.isStaff, car.create);
 
-const permissions = require("../middleware.permissions");
+router
+  .route("/:id")
+  .get(car.read)
+  .put(permissions.isStaff, car.update)
+  .patch(permissions.isStaff, car.update)
+  .delete(permissions.isAdmin, car.delete);
 
 module.exports = router;

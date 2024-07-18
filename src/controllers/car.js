@@ -71,16 +71,16 @@ module.exports = {
 
   update: async (req, res) => {
     /*
-            #swagger.tags = ["Users"]
-            #swagger.summary = "Update User"
-            #swagger.parameters['body'] = {
-                in: 'body',
-                required: true,
-               schema: {
-                    $ref: "#/definitions/Car'
-                }
-            }
-        */
+           #swagger.tags = ["Cars"]
+           #swagger.summary = "Update Car"
+           #swagger.parameters['body'] = {
+               in: 'body',
+               required: true,
+              schema: {
+                   $ref: "#/definitions/Car'
+               }
+           }
+       */
 
     req.body.updatedId = req.user._id;
 
@@ -97,9 +97,9 @@ module.exports = {
 
   delete: async (req, res) => {
     /*
-            #swagger.tags = ["Users"]
-            #swagger.summary = "Delete User"
-        */
+           #swagger.tags = ["Cars"]
+           #swagger.summary = "Delete Car"
+       */
 
     const data = await Car.deleteOne({ _id: req.params.id });
 
