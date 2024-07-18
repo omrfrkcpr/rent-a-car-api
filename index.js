@@ -58,6 +58,13 @@ app.all("/", (req, res) => {
 // Routes:
 app.use(require("./src/routes/"));
 
+app.use((req, res, next) => {
+  res.status(404).send({
+    error: true,
+    message: "Page not found!",
+  });
+});
+
 /* ------------------------------------------------------- */
 
 // errorHandler:
